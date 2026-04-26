@@ -1,5 +1,5 @@
 .tabela-wrapper {
-    overflow-x: auto;
+    
     margin-top: 20px;
     border-radius: 8px;
     display: flex;
@@ -20,21 +20,21 @@ h2 {
 }
   
   .estoque-tabela {
-    width: 80%;
+    width: 85%;
     border-collapse: collapse;
-    background: #fffbea;
-    border: 1px solid #ffd54f;
+    background: #f5b159;
+    border: 1px solid #000000;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
   
     th, td {
       padding: 12px;
       text-align: left;
-      border-bottom: 1px solid #ffe082;
+      border-bottom: 1px solid #000000;
     }
   
     th {
-      background-color: #ffb300;
+      background-color: #d69806;
       color: white;
       font-weight: bold;
     }
@@ -65,7 +65,7 @@ h2 {
       }
   
       &:not(.excluir) {
-        background-color: #f9a825;
+        background-color: #ce840d;
         color: white;
       }
     }
@@ -88,11 +88,12 @@ h2 {
     flex: 1 1 200px;
     padding: 10px 15px;
     font-size: 1rem;
-    border: 2px solid #d4af37; 
+    border: 2px solid #000000; 
     border-radius: 8px;
     outline: none;
     box-shadow: 0 2px 5px rgba(212, 175, 55, 0.2);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px;
   }
   
   .filtros input:focus {
@@ -101,7 +102,7 @@ h2 {
   }
   
   .filtros input::placeholder {
-    color: #cbbf70; 
+    color: #000000; 
     font-style: italic;
   }
 
@@ -109,7 +110,7 @@ h2 {
     margin-bottom: 2rem;
     padding: 1.5rem;
     border-radius: 12px;
-    background-color: #f4f6f8;
+    background-color: #c4c5c7;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     transition: background-color 0.3s ease;
   }
@@ -133,12 +134,13 @@ h2 {
     }
   
     .estoque-tabela {
-      font-size: 0.9rem;
+      font-size: 13px;
     }
   
     button {
       font-size: 0.8rem;
       padding: 5px 10px;
+      margin: 3px;
     }
   }
   

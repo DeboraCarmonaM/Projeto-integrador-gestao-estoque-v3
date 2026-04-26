@@ -1,8 +1,8 @@
 {
-    "name": "backend",
+    "name": "json-server",
     "version": "1.0.0",
     "scripts": {
-      "start": "json-server --watch db.json --port 3000"
+      "start": "node server.js"
     },
     "dependencies": {
       "json-server": "^0.17.0"

@@ -2,20 +2,20 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 
-import { CadastroComponent } from './cadastro.component';
+import { FluxoCaixaComponent } from './fluxo-caixa.component';
 
-describe('CadastroComponent', () => {
-  let component: CadastroComponent;
-  let fixture: ComponentFixture<CadastroComponent>;
+describe('FluxoCaixaComponent', () => {
+  let component: FluxoCaixaComponent;
+  let fixture: ComponentFixture<FluxoCaixaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CadastroComponent],
+      imports: [FluxoCaixaComponent],
       providers: [provideHttpClient(), provideRouter([])]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(CadastroComponent);
+    fixture = TestBed.createComponent(FluxoCaixaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

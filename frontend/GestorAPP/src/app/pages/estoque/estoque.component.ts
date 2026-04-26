@@ -64,10 +64,11 @@ export class EstoqueComponent {
 
   get produtosFiltrados() {
     return this.produtos.filter(p =>
-      p.nome.toLowerCase().includes(this.filtroNome.toLowerCase()) &&
-      p.categoria.toLowerCase().includes(this.filtroCategoria.toLowerCase())
+      (p.nome ?? '').toLowerCase().includes((this.filtroNome ?? '').toLowerCase()) &&
+      (p.categoria ?? '').toLowerCase().includes((this.filtroCategoria ?? '').toLowerCase())
     );
   }
+  
 
   get produtosPorCategoria() {
     const grupos: { [categoria: string]: Produto[] } = {};

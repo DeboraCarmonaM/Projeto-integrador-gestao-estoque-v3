@@ -1,10 +1,8 @@
-{
-  "produtos": [
+{"produtos": [
     {
       "id": "00ff",
       "nome": "maçã",
       "quantidade": 8,
-      "precoCusto": 5,
       "preco": 9,
       "categoria": "frutas"
     },
@@ -12,7 +10,6 @@
       "id": "04ad",
       "nome": "wafer",
       "quantidade": 6,
-      "precoCusto": 3.2,
       "preco": 5.3,
       "categoria": "biscoitos"
     },
@@ -20,7 +17,6 @@
       "id": "10aa",
       "nome": "banana",
       "quantidade": 12,
-      "precoCusto": 1.5,
       "preco": 2.5,
       "categoria": "frutas"
     },
@@ -28,7 +24,6 @@
       "id": "11bb",
       "nome": "leite integral",
       "quantidade": 5,
-      "precoCusto": 4.5,
       "preco": 6.2,
       "categoria": "laticínios"
     },
@@ -36,7 +31,6 @@
       "id": "12cc",
       "nome": "arroz branco",
       "quantidade": 10,
-      "precoCusto": 5.5,
       "preco": 8,
       "categoria": "grãos"
     },
@@ -44,7 +38,6 @@
       "id": "13dd",
       "nome": "feijão carioca",
       "quantidade": 7,
-      "precoCusto": 5.8,
       "preco": 8,
       "categoria": "grãos"
     },
@@ -52,7 +45,6 @@
       "id": "14ee",
       "nome": "queijo muçarela",
       "quantidade": 3,
-      "precoCusto": 8,
       "preco": 12,
       "categoria": "laticínios"
     },
@@ -60,7 +52,6 @@
       "id": "15ff",
       "nome": "iogurte natural",
       "quantidade": 6,
-      "precoCusto": 2.5,
       "preco": 4.5,
       "categoria": "laticínios"
     },
@@ -68,7 +59,6 @@
       "id": "16gg",
       "nome": "cenoura",
       "quantidade": 10,
-      "precoCusto": 2,
       "preco": 3.5,
       "categoria": "legumes"
     },
@@ -76,7 +66,6 @@
       "id": "17hh",
       "nome": "batata",
       "quantidade": 15,
-      "precoCusto": 4,
       "preco": 6.5,
       "categoria": "legumes"
     },
@@ -84,7 +73,6 @@
       "id": "18ii",
       "nome": "alface",
       "quantidade": 5,
-      "precoCusto": 2.5,
       "preco": 5,
       "categoria": "verduras"
     },
@@ -92,7 +80,6 @@
       "id": "19jj",
       "nome": "refrigerante coca cola",
       "quantidade": 9,
-      "precoCusto": 8.5,
       "preco": 13,
       "categoria": "bebidas"
     },
@@ -100,7 +87,6 @@
       "id": "20kk",
       "nome": "água mineral",
       "quantidade": 24,
-      "precoCusto": 1.5,
       "preco": 3,
       "categoria": "bebidas"
     },
@@ -108,7 +94,6 @@
       "id": "21ll",
       "nome": "café em pó",
       "quantidade": 4,
-      "precoCusto": 14,
       "preco": 20,
       "categoria": "bebidas"
     },
@@ -116,7 +101,6 @@
       "id": "22mm",
       "nome": "pão de forma",
       "quantidade": 6,
-      "precoCusto": 4.5,
       "preco": 7,
       "categoria": "padaria"
     },
@@ -124,7 +108,6 @@
       "id": "23nn",
       "nome": "presunto",
       "quantidade": 5,
-      "precoCusto": 6,
       "preco": 10,
       "categoria": "frios"
     },
@@ -132,7 +115,6 @@
       "id": "24oo",
       "nome": "sabão em pó",
       "quantidade": 3,
-      "precoCusto": 10,
       "preco": 15,
       "categoria": "limpeza"
     },
@@ -140,7 +122,6 @@
       "id": "25pp",
       "nome": "detergente",
       "quantidade": 8,
-      "precoCusto": 1.5,
       "preco": 2.3,
       "categoria": "limpeza"
     },
@@ -148,112 +129,9 @@
       "id": "26qq",
       "nome": "papel higiênico",
       "quantidade": 6,
-      "precoCusto": 6.5,
       "preco": 9.5,
       "categoria": "higiene"
-    },
-    {
-      "nome": "Hambúrguer",
-      "quantidade": 6,
-      "precoCusto": 9,
-      "preco": 15,
-      "id": "wvPxExR",
-      "categoria": "Congelados"
     }
   ],
-  "vendas": [
-    {
-      "id": "v001",
-      "data": "2024-10-25",
-      "totalVenda": 60.5,
-      "totalCusto": 35,
-      "itens": [
-        {
-          "produtoId": "00ff",
-          "quantidade": 2,
-          "precoVenda": 9
-        },
-        {
-          "produtoId": "04ad",
-          "quantidade": 5,
-          "precoVenda": 5.3
-        }
-      ]
-    },
-    {
-      "id": "v002",
-      "data": "2024-10-26",
-      "totalVenda": 15,
-      "totalCusto": 10,
-      "itens": [
-        {
-          "produtoId": "10aa",
-          "quantidade": 6,
-          "precoVenda": 2.5
-        }
-      ]
-    }
-  ],
-  "lancamentos": [
-    {
-      "id": "1",
-      "data": "2024-10-25",
-      "descricao": "Venda no PDV - v001",
-      "valor": 60.5,
-      "tipo": "RECEITA",
-      "categoriaId": 1,
-      "referenciaVendaId": "v001"
-    },
-    {
-      "id": "2",
-      "data": "2024-10-25",
-      "descricao": "Compra de Frutas e Biscoitos (Fornecedor X)",
-      "valor": -120,
-      "tipo": "DESPESA",
-      "categoriaId": 2
-    },
-    {
-      "id": "3",
-      "data": "2024-10-26",
-      "descricao": "Venda no PDV - v002",
-      "valor": 15,
-      "tipo": "RECEITA",
-      "categoriaId": 1,
-      "referenciaVendaId": "v002"
-    },
-    {
-      "id": "4",
-      "data": "2024-10-26",
-      "descricao": "Conta de Luz (Outubro)",
-      "valor": -210,
-      "tipo": "DESPESA",
-      "categoriaId": 3
-    },
-    {
-      "id": "9c58",
-      "data": "2025-10-26",
-      "tipo": "DESPESA",
-      "valor": -500,
-      "descricao": "venda leite",
-      "categoriaId": "1"
-    }
-  ],
-  "categoriasFinanceiras": [
-    {
-      "id": "1",
-      "nome": "Receita de Vendas (Principal)"
-    },
-    {
-      "id": "2",
-      "nome": "Compra de Mercadoria"
-    },
-    {
-      "id": "3",
-      "nome": "Despesas Fixas (Contas)"
-    },
-    {
-      "id": "4",
-      "nome": "Salários/Pró-labore"
-    }
-  ]
+  "vendas": []
 }

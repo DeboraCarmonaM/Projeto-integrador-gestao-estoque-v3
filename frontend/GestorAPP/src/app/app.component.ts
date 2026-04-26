@@ -12,9 +12,11 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component'; // Se j
   template: `
     <header class="header-principal">
   <h1>Gestão de Estoque</h1>
-  <nav>
+  <nav aria-label="Navegação principal">
     <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Estoque</a>
     <a routerLink="/cadastro" routerLinkActive="active">Cadastro</a>
+    <a routerLink="/financeiro/fluxo-caixa" routerLinkActive="active">Fluxo de Caixa</a>
+    <a routerLink="/financeiro/relatorios" routerLinkActive="active">Relatórios</a>
   </nav>
 </header>
 <router-outlet></router-outlet>
@@ -22,4 +24,6 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component'; // Se j
   `,
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'GestorAPP';
+}

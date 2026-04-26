@@ -53,11 +53,30 @@
       </div>
     </div>
 
+    <div class="form-group">
+      <label for="categoria">Categoria</label>
+      <select
+        id="categoria"
+        name="categoria"
+        [(ngModel)]="produto.categoria"
+        required
+        #categoria="ngModel"
+        [class.invalid]="categoria.invalid && categoria.touched"
+      >
+        <option value="" disabled>Selecione uma categoria</option>
+        <option *ngFor="let cat of categorias" [value]="cat">{{ cat }}</option>
+      </select>
+      <div class="error" *ngIf="categoria.invalid && categoria.touched">
+        Categoria é obrigatória.
+      </div>
+    </div>
+    
+
     <button type="submit" [disabled]="form.invalid" class="btn-cadastrar">
       Cadastrar
     </button>
   </form>
 </div>
 <div class="div-center">
-  <img class="img-familia" src="../../../assets/img/FAMILIA-QUITANDA-e1718049264838-1024x713.png.webp" alt="">
+  <img class="img-familia" src="../../../assets/img/FAMILIA-QUITANDA-e1718049264838-1024x713.png.webp" alt="Família em uma quitanda com frutas e verduras">
 </div>

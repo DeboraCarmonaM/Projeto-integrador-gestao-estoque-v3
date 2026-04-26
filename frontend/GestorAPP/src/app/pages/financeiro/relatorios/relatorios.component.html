@@ -1,0 +1,48 @@
+<div class="relatorios-container">
+  <h1>Demonstrativo de Resultado Simplificado (DRE)</h1>
+
+  <div class="filtro-area">
+    <label>Data Inicial:
+      <input type="date" [(ngModel)]="dataInicial">
+    </label>
+    <label>Data Final:
+      <input type="date" [(ngModel)]="dataFinal">
+    </label>
+    <button (click)="gerarRelatorio()">Gerar Relatório</button>
+  </div>
+
+  <hr>
+
+  <div class="dre-tabela">
+    <h2>Resultados do Período: {{ dataInicial | date:'shortDate' }} - {{ dataFinal | date:'shortDate' }}</h2>
+
+    <table class="tabela-financeira">
+      
+      <tr class="linha-principal receita">
+        <td>1. Receita Bruta de Vendas</td>
+        <td>{{ receitaBruta | currency:'R$ ':'symbol':'1.2-2' }}</td>
+      </tr>
+      
+      <tr class="linha-secundaria despesa">
+        <td>(-) 2. Custo da Mercadoria Vendida (CMV)</td>
+        <td>({{ custoMercadoriaVendida | currency:'R$ ':'symbol':'1.2-2' }})</td>
+      </tr>
+      
+      <tr class="linha-principal resultado" [ngClass]="{'positivo': lucroBruto >= 0, 'negativo': lucroBruto < 0}">
+        <td>**3. LUCRO BRUTO (1 - 2)**</td>
+        <td>**{{ lucroBruto | currency:'R$ ':'symbol':'1.2-2' }}**</td>
+      </tr>
+      
+      <tr class="linha-secundaria despesa">
+        <td>(-) 4. Despesas Operacionais (Aluguel, Luz, etc.)</td>
+        <td>({{ despesasOperacionais | currency:'R$ ':'symbol':'1.2-2' }})</td>
+      </tr>
+      
+      <tr class="linha-principal resultado liquido" [ngClass]="{'positivo': lucroLiquido >= 0, 'negativo': lucroLiquido < 0}">
+        <td>**5. LUCRO LÍQUIDO (3 - 4)**</td>
+        <td>**{{ lucroLiquido | currency:'R$ ':'symbol':'1.2-2' }}**</td>
+      </tr>
+
+    </table>
+  </div>
+</div>

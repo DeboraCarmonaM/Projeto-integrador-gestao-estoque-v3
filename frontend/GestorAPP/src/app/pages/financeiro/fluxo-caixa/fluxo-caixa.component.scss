@@ -1,0 +1,201 @@
+/* Configurações gerais do container */
+.financeiro-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+h1, h2 {
+  color: #444;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 25px 0;
+}
+
+/* Estilos de Botões e Inputs */
+input[type="date"],
+input[type="number"],
+input[type="text"],
+select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 9px 15px;
+  background-color: #d4c081; /* Tom amarelado do seu menu */
+  border: 1px solid #b8a053;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #b8a053;
+}
+
+/* 1. Área de Filtro de Período */
+.filtro-area {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.filtro-area label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+/* 2. Cards de Resumo */
+.resumo-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.card p {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Cores dos Cards */
+.card-receitas {
+  background-color: #28a745; /* Verde */
+}
+.card-despesas {
+  background-color: #dc3545; /* Vermelho */
+}
+.card-saldo {
+  background-color: #6c757d; /* Cinza */
+}
+.card-saldo.positivo {
+  background-color: #17a2b8; /* Azul */
+}
+.card-saldo.negativo {
+  background-color: #dc3545; /* Vermelho (se negativo) */
+}
+
+
+/* 3. Lançamento Manual (Formulário) */
+.lancamento-manual {
+  background-color: #fdfdfd;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.lancamento-manual h2 {
+  margin-top: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+  gap: 10px; /* Espaçamento entre os campos */
+  align-items: center;
+}
+
+.form-row input[type="text"] {
+  flex: 2; /* Descrição ocupa mais espaço */
+  min-width: 200px;
+}
+.form-row input[type="number"] {
+  flex: 1;
+  min-width: 120px;
+}
+.form-row select {
+  flex: 1;
+  min-width: 150px;
+}
+.form-row button {
+  margin-left: auto; /* Alinha o botão à direita */
+}
+
+
+/* 4. Tabela de Lançamentos */
+.tabela-filtros {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.tabela-lancamentos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.tabela-lancamentos th,
+.tabela-lancamentos td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.tabela-lancamentos thead tr {
+  background-color: #f4f4f4;
+  color: #555;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.tabela-lancamentos tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.tabela-lancamentos tbody tr:hover {
+  background-color: #f0f8ff; /* Azul claro no hover */
+}
+
+/* Cores de Receita e Despesa na Tabela */
+.tabela-lancamentos tr.receita .valor-col {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.tabela-lancamentos tr.despesa .valor-col {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.tabela-lancamentos .valor-col {
+  text-align: right;
+  min-width: 120px;
+}

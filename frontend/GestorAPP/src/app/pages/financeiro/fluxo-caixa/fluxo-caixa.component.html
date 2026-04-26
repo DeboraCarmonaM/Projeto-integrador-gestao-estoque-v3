@@ -1,0 +1,100 @@
+<div class="financeiro-container">
+  <h1>Fluxo de Caixa</h1>
+
+  <div class="filtro-area">
+    <h2>Filtro de Período</h2>
+    <label>Data Inicial:
+      <input type="date" [(ngModel)]="dataInicial">
+    </label>
+    <label>Data Final:
+      <input type="date" [(ngModel)]="dataFinal">
+    </label>
+    <button (click)="aplicarFiltros()">Buscar Período</button>
+  </div>
+
+  <hr>
+  
+  <div class="resumo-cards">
+    <div class="card card-receitas">
+      <h3>Total de Receitas</h3>
+      <!-- <p class="valor-receita">R$ {{ totalReceitas | number:'1.2-2' }}</p> -->
+      <p class="valor-receita">R$ 15000</p>
+    </div>
+    <div class="card card-despesas">
+      <h3>Total de Despesas</h3>
+      <!-- <p class="valor-despesa">R$ {{ totalDespesas | number:'1.2-2' }}</p> -->
+      <p class="valor-despesa">R$ 7895</p>
+    </div>
+    <div class="card card-saldo" [ngClass]="{'positivo': saldoAtual >= 0, 'negativo': saldoAtual < 0}">
+      <h3>Saldo Líquido</h3>
+      <!-- <p class="valor-saldo">R$ {{ saldoAtual | number:'1.2-2' }}</p> -->
+       <p class="valor-saldo">R$ 7105</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="lancamento-manual">
+    <h2>Registrar Nova Despesa Manual</h2>
+    <form (ngSubmit)="salvarLancamentoManual()">
+      <div class="form-row">
+        <input type="date" name="data" [(ngModel)]="novoLancamento.data" required>
+        
+        <input type="number" name="valor" [(ngModel)]="novoLancamento.valor" placeholder="Valor (Ex: 150.00)" required min="0.01">
+        
+        <input type="text" name="descricao" [(ngModel)]="novoLancamento.descricao" placeholder="Descrição (Ex: Pagamento Aluguel)" required>
+        
+        <select name="categoria" [(ngModel)]="novoLancamento.categoriaId" required>
+          <option [ngValue]="undefined" disabled>Selecione a Categoria...</option>
+          <option *ngFor="let cat of categorias" [ngValue]="cat.id">
+             {{ cat.nome }}
+          </option>
+        </select>
+        
+        <input type="hidden" name="tipo" [ngModel]="'DESPESA'">
+
+        <button type="submit">Registrar Despesa</button>
+      </div>
+    </form>
+  </div>
+  
+  <hr>
+
+  <div class="tabela-filtros">
+      <h2>Detalhe dos Lançamentos</h2>
+      <label>Mostrar Tipo:
+        <select [(ngModel)]="filtroTipo" (change)="mudarFiltroTipo()">
+          <option value="TODOS">Todos</option>
+          <option value="RECEITA">Receitas</option>
+          <option value="DESPESA">Despesas</option>
+        </select>
+      </label>
+  </div>
+  
+  <table class="tabela-lancamentos">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Descrição</th>
+        <th>Categoria</th>
+        <th>Tipo</th>
+        <th>Valor (R$)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lanc of lancamentosParaTabela" 
+          [class.receita]="lanc.tipo === 'RECEITA'" 
+          [class.despesa]="lanc.tipo === 'DESPESA'">
+        <td>{{ lanc.data | date:'shortDate' }}</td>
+        <td>{{ lanc.descricao }}</td>
+        <td>{{ getNomeCategoria(lanc.categoriaId) }}</td>
+        <td>{{ lanc.tipo === 'RECEITA' ? 'Receita' : 'Despesa' }}</td>
+        <td class="valor-col">
+            {{ lanc.valor | currency:'R$ ':'symbol':'1.2-2' }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="lancamentosParaTabela.length === 0">Nenhum lançamento encontrado para o filtro atual.</p>
+
+</div>

@@ -9,7 +9,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:3000';
+  private apiUrl = 'https://backend-projeto-minha-quitandinha.onrender.com';
 
   private produtosAtualizadosSubject = new Subject<Produto[]>();
   
